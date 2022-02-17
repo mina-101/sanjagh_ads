@@ -18,11 +18,9 @@ class CampaignPolicy
      * @param  \App\Models\User  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function activate(User $user, Campaign $campaign)
+    public function activate(User $user)
     {
-        $userGroup = UserGroup::where("title", "admin")->first();
-        return $user->user_group_id === $userGroup['_id'];
+        return $user->isAdmin($user);
     }
-
 
 }

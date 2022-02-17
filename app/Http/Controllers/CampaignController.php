@@ -16,7 +16,7 @@ class CampaignController extends Controller
     {
         $campaigns = Campaign::where("user_id", auth()->user()->_id)->get();
         return ["data" => "success",
-                "result"=>$campaigns];
+            "result"=>$campaigns];
     }
 
     /**
@@ -29,12 +29,13 @@ class CampaignController extends Controller
     {
         $campaign = Campaign::create($request->all());
         return ["data" => "success",
-                "result"=>$campaign];
+            "result"=>$campaign];
     }
 
     /**
-     * @param $campaign
+     * @param Campaign $campaign
      * @return array
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function activate(Campaign $campaign)
     {
@@ -45,7 +46,24 @@ class CampaignController extends Controller
         $campaign->isActive = true;
         $campaign->save();
         return ["data" => "success",
-                "result"=>$campaign];
+            "result"=>$campaign];
+    }
+
+    /**
+     * @param $search
+     * @return array
+     */
+    public function search($search)
+    {
+        if (!($search)) {
+            abort(400, trans('errors.REQUIRED_FIELD'));
+        }
+        $campaigns = Campaign::where('user_id', auth()->user()->id)->where(function ($query) use ($search){
+            $query->where('title', 'like', '%' . $search . '%')
+                ->orWhere('content', 'like', '%' . $search . '%');
+        })-> get();
+        return ["data" => "success",
+            "result"=>$campaigns];
     }
 
 

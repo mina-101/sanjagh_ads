@@ -21,10 +21,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::middleware('auth:api')->group(function() {
-    Route::resource('campaigns/{campaignId}/ads', AdController::class)->only(["store", "index"]);
+    Route::get('campaigns/search/{search}',[CampaignController::class, 'search']);
     Route::post('campaigns/{campaign}/activate', [CampaignController::class, 'activate']);
     Route::resource('campaigns', CampaignController::class)->only(["store", "index"]);
+
+    Route::get('campaigns/{campaignId}/ads/search/{search}',[AdController::class, 'search']);
+    Route::resource('campaigns/{campaignId}/ads', AdController::class)->only(["store", "index"]);
+
     Route::resource('userGroup', UserGroupController::class)->only(["store"]);
 });
 Route::post('login' , [UserController::class, 'login']);
 Route::post('register' , [UserController::class, 'register']);
+

@@ -98,5 +98,9 @@ class User extends Model implements
         return [];
     }
 
+    public function isAdmin(User $user){
+        $userGroup = UserGroup::where("title", "admin")->first();
+        return $user->user_group_id === $userGroup['_id'];
+    }
 
 }
