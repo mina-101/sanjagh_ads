@@ -20,6 +20,7 @@ use Jenssegers\Mongodb\Eloquent\Model;
  * @property string last_name
  * @property string email
  * @property string password
+ * @property string user_group_id
  */
 
 class User extends Model implements

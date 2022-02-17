@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::middleware('auth:api')->group(function() {
     Route::resource('campaigns/{campaignId}/ads', AdController::class)->only(["store", "index"]);
-    Route::post('campaigns/{campaignId}/activate', [CampaignController::class, 'activate']);
+    Route::post('campaigns/{campaign}/activate', [CampaignController::class, 'activate']);
     Route::resource('campaigns', CampaignController::class)->only(["store", "index"]);
     Route::resource('userGroup', UserGroupController::class)->only(["store"]);
 });

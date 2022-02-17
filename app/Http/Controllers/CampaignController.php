@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCampaignRequest;
-use App\Http\Resources\CampaignCollection;
 use App\Models\Campaign;
 
 class CampaignController extends Controller
@@ -37,12 +36,12 @@ class CampaignController extends Controller
      * @param $campaign
      * @return array
      */
-    public function activate($campaignId)
+    public function activate(Campaign $campaign)
     {
-        $campaign = Campaign::find($campaignId);
         if(!$campaign){
             abort(404, trans('errors.NOT_FOUND_CAMPAIGN'));
         }
+        $this->authorize('activate', $campaign);
         $campaign->isActive = true;
         $campaign->save();
         return ["data" => "success",
