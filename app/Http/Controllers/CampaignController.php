@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCampaignRequest;
+use App\Jobs\ActivateCampaignAdsJob;
 use App\Models\Campaign;
+use App\Events\CampaignHasBeenActivatedEvent;
 
 class CampaignController extends Controller
 {
@@ -45,6 +47,7 @@ class CampaignController extends Controller
         $this->authorize('activate', $campaign);
         $campaign->isActive = true;
         $campaign->save();
+        ActivateCampaignAdsJob::dispatch($campaign);
         return ["data" => "success",
             "result"=>$campaign];
     }
