@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCampaignRequest;
 use App\Jobs\ActivateCampaignAdsJob;
 use App\Models\Campaign;
 use App\Events\CampaignHasBeenActivatedEvent;
+use Illuminate\Support\Facades\Log;
 
 class CampaignController extends Controller
 {

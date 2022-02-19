@@ -21,9 +21,10 @@ class ActivateCampaignAdsJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct()
+    protected $campaign;
+    public function __construct(Campaign $campaign)
     {
-        //
+        $this->campaign = $campaign;
     }
 
     /**
@@ -31,10 +32,12 @@ class ActivateCampaignAdsJob implements ShouldQueue
      *
      * @return void
      */
-    public function handle(Campaign $campaign)
+    public function handle()
     {
-        Log::error("8888888888888888888");
-        $ads = Ad::where("campaign_id", $campaign->id);
-        $ads->update(['isActive'=>false]);
+        $ads = Ad::where("campaign_id", $this->campaign->id)->get();
+        foreach ($ads as $ad){
+            $ad->isActive = true;
+            $ad->save();
+        }
     }
 }
