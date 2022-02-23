@@ -1,420 +1,422 @@
 {
-	"info": {
-		"_postman_id": "bc8b28c1-2e14-4e5d-86f8-021d05f40670",
-		"name": "sanjagh",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "add campaign",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6NDIwMFwvZm91bnRhaW5cL2ZvdW50YWluLWJhY2tlbmRcL2FwaVwvcHVibGljXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0NDg0MTI0NCwiZXhwIjoxNjc2Mzc3MjQ0LCJuYmYiOjE2NDQ4NDEyNDQsImp0aSI6IjFmOEROM0h0T1FpN0RqN1kiLCJzdWIiOiI2MGM4Mjk1ZWEwMGEwOTdkZmUyOThkYjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.OFMG6xxu808CNJ2IRCk0X2x0KGBMhEykbiOGtKTVdT4",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"title\": \"ads1\",\n    \"content\": \"contents1\"\n    }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8008/api/campaigns/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8008",
-					"path": [
-						"api",
-						"campaigns",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "add ad",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6NDIwMFwvZm91bnRhaW5cL2ZvdW50YWluLWJhY2tlbmRcL2FwaVwvcHVibGljXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0NDg0MTI0NCwiZXhwIjoxNjc2Mzc3MjQ0LCJuYmYiOjE2NDQ4NDEyNDQsImp0aSI6IjFmOEROM0h0T1FpN0RqN1kiLCJzdWIiOiI2MGM4Mjk1ZWEwMGEwOTdkZmUyOThkYjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.OFMG6xxu808CNJ2IRCk0X2x0KGBMhEykbiOGtKTVdT4",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"title\": \"ads1\",\n    \"content\": \"contents1\",\n    \"campaignId\": 1\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8008/api/ads/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8008",
-					"path": [
-						"api",
-						"ads",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get campaigns",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6NDIwMFwvZm91bnRhaW5cL2ZvdW50YWluLWJhY2tlbmRcL2FwaVwvcHVibGljXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0NDg0MTI0NCwiZXhwIjoxNjc2Mzc3MjQ0LCJuYmYiOjE2NDQ4NDEyNDQsImp0aSI6IjFmOEROM0h0T1FpN0RqN1kiLCJzdWIiOiI2MGM4Mjk1ZWEwMGEwOTdkZmUyOThkYjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.OFMG6xxu808CNJ2IRCk0X2x0KGBMhEykbiOGtKTVdT4",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8008/api/campaigns/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8008",
-					"path": [
-						"api",
-						"campaigns",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get ads",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6NDIwMFwvZm91bnRhaW5cL2ZvdW50YWluLWJhY2tlbmRcL2FwaVwvcHVibGljXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0NDg0MTI0NCwiZXhwIjoxNjc2Mzc3MjQ0LCJuYmYiOjE2NDQ4NDEyNDQsImp0aSI6IjFmOEROM0h0T1FpN0RqN1kiLCJzdWIiOiI2MGM4Mjk1ZWEwMGEwOTdkZmUyOThkYjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.OFMG6xxu808CNJ2IRCk0X2x0KGBMhEykbiOGtKTVdT4",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8008/api/ads/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8008",
-					"path": [
-						"api",
-						"ads",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "register users",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"first_name\": \"mina\",\n    \"last_name\": \"memar\",\n    \"email\": \"mn.mejmar@gmail.com\",\n    \"password\": \"123456\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8008/api/register/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8008",
-					"path": [
-						"api",
-						"register",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "login users",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"first_name\": \"mina\",\n    \"last_name\": \"memar\",\n    \"email\": \"mn.mem0ar@gmail.com\",\n    \"password\": \"123456\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8008/api/login/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8008",
-					"path": [
-						"api",
-						"login",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "activate campain",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwOFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0NTA0MDg1MywiZXhwIjoxNjQ1MDQ0NDUzLCJuYmYiOjE2NDUwNDA4NTMsImp0aSI6IkNDZU81ZlU2VUZtTFEwTGIiLCJzdWIiOiI2MjBkNTA1YmQ5MDRlZDJhMTE1M2UxMjkiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XQf2lTn2O50qyXSycMVhr-wk_VbeOFJk1YSZcQASQYw",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8008/api/campaigns/620cf32c8b4ec651932d57e2/activate",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8008",
-					"path": [
-						"api",
-						"campaigns",
-						"620cf32c8b4ec651932d57e2",
-						"activate"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "search campaigns",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwOFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0NTA0MjM0OSwiZXhwIjoxNjQ1MDQ1OTQ5LCJuYmYiOjE2NDUwNDIzNDksImp0aSI6ImxmQ0hkdFU3MXFqYTh2eFgiLCJzdWIiOiI2MjBkNWE5NGQ5MDRlZDJhMTE1M2UxMzAiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.UA3FOOmveEVz5IjXOJHpPXutNvTpJcu-yGRPslhMtwg",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8008/api/campaigns/search/ser",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8008",
-					"path": [
-						"api",
-						"campaigns",
-						"search",
-						"ser"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "search ads",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwOFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0NTA4OTYyNCwiZXhwIjoxNjQ1MDkzMjI0LCJuYmYiOjE2NDUwODk2MjQsImp0aSI6InZud1VORnlsWTNtVzlxNzgiLCJzdWIiOiI2MjBlMTM0NzkwYWMxOTZiYWMzYjI5NjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.qIzJG2uxLdITxmfGGw0nm4ipVR_-4DbWn73qcN2vyCY",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8008/api/campaigns/620e1d0290ac196bac3b2963/ads/search/ads",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8008",
-					"path": [
-						"api",
-						"campaigns",
-						"620e1d0290ac196bac3b2963",
-						"ads",
-						"search",
-						"ads"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+    "info": {
+        "_postman_id": "bc8b28c1-2e14-4e5d-86f8-021d05f40670",
+        "name": "sanjagh",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "add campaign",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwOFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0NTYzNDg0MCwiZXhwIjoxNjQ1NjM4NDQwLCJuYmYiOjE2NDU2MzQ4NDAsImp0aSI6IlJRcjZSMDdMYWZiTjV2d1UiLCJzdWIiOiI2MjBlMTM0NzkwYWMxOTZiYWMzYjI5NjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.J_BhGwZr0LnNPJoUXhEkrKKt1qWrjoqmbPkCvbG29lw",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"ads2\",\n    \"content\": \"contents1\"\n    }",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8008/api/campaigns/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8008",
+                    "path": [
+                        "api",
+                        "campaigns",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "add ad",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwOFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0NTYzNDg0MCwiZXhwIjoxNjQ1NjM4NDQwLCJuYmYiOjE2NDU2MzQ4NDAsImp0aSI6IlJRcjZSMDdMYWZiTjV2d1UiLCJzdWIiOiI2MjBlMTM0NzkwYWMxOTZiYWMzYjI5NjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.J_BhGwZr0LnNPJoUXhEkrKKt1qWrjoqmbPkCvbG29lw",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"ads1\",\n    \"content\": \"contents1\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8008/api/campaigns/6216690389c39344ac2fb7c4/ads",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8008",
+                    "path": [
+                        "api",
+                        "campaigns",
+                        "6216690389c39344ac2fb7c4",
+                        "ads"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "get campaigns",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwOFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0NTYzNDg0MCwiZXhwIjoxNjQ1NjM4NDQwLCJuYmYiOjE2NDU2MzQ4NDAsImp0aSI6IlJRcjZSMDdMYWZiTjV2d1UiLCJzdWIiOiI2MjBlMTM0NzkwYWMxOTZiYWMzYjI5NjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.J_BhGwZr0LnNPJoUXhEkrKKt1qWrjoqmbPkCvbG29lw",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8008/api/campaigns/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8008",
+                    "path": [
+                        "api",
+                        "campaigns",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "get ads",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwOFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0NTYzNDg0MCwiZXhwIjoxNjQ1NjM4NDQwLCJuYmYiOjE2NDU2MzQ4NDAsImp0aSI6IlJRcjZSMDdMYWZiTjV2d1UiLCJzdWIiOiI2MjBlMTM0NzkwYWMxOTZiYWMzYjI5NjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.J_BhGwZr0LnNPJoUXhEkrKKt1qWrjoqmbPkCvbG29lw",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8008/api/campaigns/6216690389c39344ac2fb7c4/ads",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8008",
+                    "path": [
+                        "api",
+                        "campaigns",
+                        "6216690389c39344ac2fb7c4",
+                        "ads"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "register users",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"first_name\": \"mina\",\n    \"last_name\": \"memar\",\n    \"email\": \"mn.mejmar@gmail.com\",\n    \"password\": \"123456\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8008/api/register/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8008",
+                    "path": [
+                        "api",
+                        "register",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "login users",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"first_name\": \"mina\",\n    \"last_name\": \"memar\",\n    \"email\": \"mn.memar@gmail.com\",\n    \"password\": \"123456\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8008/api/login/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8008",
+                    "path": [
+                        "api",
+                        "login",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "activate campain",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwOFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0NTA0MDg1MywiZXhwIjoxNjQ1MDQ0NDUzLCJuYmYiOjE2NDUwNDA4NTMsImp0aSI6IkNDZU81ZlU2VUZtTFEwTGIiLCJzdWIiOiI2MjBkNTA1YmQ5MDRlZDJhMTE1M2UxMjkiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XQf2lTn2O50qyXSycMVhr-wk_VbeOFJk1YSZcQASQYw",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8008/api/campaigns/620cf32c8b4ec651932d57e2/activate",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8008",
+                    "path": [
+                        "api",
+                        "campaigns",
+                        "620cf32c8b4ec651932d57e2",
+                        "activate"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "search campaigns",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwOFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0NTA0MjM0OSwiZXhwIjoxNjQ1MDQ1OTQ5LCJuYmYiOjE2NDUwNDIzNDksImp0aSI6ImxmQ0hkdFU3MXFqYTh2eFgiLCJzdWIiOiI2MjBkNWE5NGQ5MDRlZDJhMTE1M2UxMzAiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.UA3FOOmveEVz5IjXOJHpPXutNvTpJcu-yGRPslhMtwg",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8008/api/campaigns/search/ser",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8008",
+                    "path": [
+                        "api",
+                        "campaigns",
+                        "search",
+                        "ser"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "search ads",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwOFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0NTA4OTYyNCwiZXhwIjoxNjQ1MDkzMjI0LCJuYmYiOjE2NDUwODk2MjQsImp0aSI6InZud1VORnlsWTNtVzlxNzgiLCJzdWIiOiI2MjBlMTM0NzkwYWMxOTZiYWMzYjI5NjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.qIzJG2uxLdITxmfGGw0nm4ipVR_-4DbWn73qcN2vyCY",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8008/api/campaigns/620e1d0290ac196bac3b2963/ads/search/ads",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8008",
+                    "path": [
+                        "api",
+                        "campaigns",
+                        "620e1d0290ac196bac3b2963",
+                        "ads",
+                        "search",
+                        "ads"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
 }
