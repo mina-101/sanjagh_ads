@@ -24,7 +24,7 @@ class StoreAdRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" =>"required|max:250",
+            "title" =>"required|max:250|unique:sanjagh_ads",
             "content" =>"required|max:250",
         ];
     }

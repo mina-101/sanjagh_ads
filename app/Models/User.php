@@ -20,6 +20,7 @@ use Jenssegers\Mongodb\Eloquent\Model;
  * @property string last_name
  * @property string email
  * @property string password
+ * @property string user_group_id
  */
 
 class User extends Model implements
@@ -97,5 +98,9 @@ class User extends Model implements
         return [];
     }
 
+    public function isAdmin(User $user){
+        $userGroup = UserGroup::where("title", "admin")->first();
+        return $user->user_group_id === $userGroup['_id'];
+    }
 
 }

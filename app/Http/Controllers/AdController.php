@@ -16,11 +16,12 @@ class AdController extends Controller
     public function index($campaignId)
     {
         $campaign = Campaign::find($campaignId);
+
         if(!$campaign){
             abort(404, trans('errors.NOT_FOUND_CAMPAIGN'));
         }
         if($campaign["user_id"] != auth()->user()->_id){
-            abort(401, trans('errors.NOT_FOUND_CAMPAIGN'));
+            abort(401, trans('errors.NOT_AUTHORIZED'));
         }
         $ads = $campaign->ads;
         return ["data" => "success",
@@ -39,6 +40,9 @@ class AdController extends Controller
         if(!$campaign){
             abort(404, trans('errors.NOT_FOUND_CAMPAIGN'));
         }
+        if($campaign["user_id"] != auth()->user()->_id){
+            abort(401, trans('errors.NOT_AUTHORIZED'));
+        }
         $data = [
             "title"=>$request['title'],
             "content"=>$request['content']
@@ -47,6 +51,29 @@ class AdController extends Controller
         return ["data" => "success",
             "result"=>$ad];
     }
-
+    /**
+     * @param $search
+     * @return array
+     */
+    public function search($campaignId, $search)
+    {
+        if (!($search)) {
+            abort(400, trans('errors.REQUIRED_FIELD'));
+        }
+        $ads = Ad::where('campaign_id', $campaignId)->where(function ($query) use ($search){
+            $query->where('title', 'like', '%' . $search . '%')
+                ->orWhere('content', 'like', '%' . $search . '%');
+        })
+        ->with('campaign')
+        ->whereHas(
+                'campaign',
+                function($query) {
+                    $query->where('user_id', auth()->user()->id);
+                }
+            )
+        ->get();
+        return ["data" => "success",
+            "result"=>$ads];
+    }
 
 }

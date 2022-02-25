@@ -24,7 +24,7 @@ class StoreCampaignRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" =>"required",
+            "title" =>"required|unique:sanjagh_campaigns",
             "content" =>"required",
         ];
     }
