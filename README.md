@@ -21,5 +21,5 @@ These services are provided to the users:
 For details about this API you can check docs/sanjagh.postman_collection.json 
 
 ## Run project
-1. Clone project via https://github.com/mina-101/sanjagh.git 
+1. Clone project via https://github.com/mina-101/sanjagh_ads.git
 2. In  project directory simply run: php artisan serve
